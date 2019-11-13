@@ -8,9 +8,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-
-
 
         ArrayList<String> colors = new ArrayList<String>();
 
@@ -20,19 +17,22 @@ public class Main {
 
         System.out.println(colors.get(1));
 
+        Scanner key = new Scanner(System.in);
+
+        System.out.println("Add a color");
+
+
         while (true) {
 
-            System.out.println("Add a color");
-            Scanner key = new Scanner(System.in);
-            String c;
-            c = key.next();
-            colors.add(key.next());
+            String co;
+            co = key.nextLine();
 
-            System.out.println("Keep adding colors and type quit when your done");
-            
-            String input = key.next();
-            if (input.equalsIgnoreCase("quit")){
+            System.out.println("Keep adding colors and type quit when your done or enter any key to continue");
+
+            if (co.equalsIgnoreCase("quit")){
                 break;
+            }else{
+                colors.add(co);
             }
         }
         System.out.println(colors);
